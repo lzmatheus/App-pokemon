@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <h1><strong>Pokemons: </strong></h1>
+    </ion-row>
+
+    <ion-row *ngFor="let pokemon of apppokemons; let i = index">
+      <ion-item buttom style="width: 100%;"(click)="listPokemon(i + 1)">
+        <h3 [innerText]="pokemon.name"></h3>
+        
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+</ion-content>
